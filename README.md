@@ -1,0 +1,2 @@
+# clanbattle_calc
+クラバトのダメージを登録するためのRailsアプリケーション
