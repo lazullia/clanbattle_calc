@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>名前:</strong>
+  <%= @clan_user.name %>
+</p>
+<p>
+  <strong>役職:</strong>
+  <%= @clan_user.position %>
+<p>
+  <strong>作成日:</strong>
+  <%= @clan_user.created_at%>
+</p>
+<p>
+  <strong>更新日:</strong>
+  <%= @clan_user.created_at %>
+</p>
+
+<%= link_to 'Edit', edit_clan_user_path(@clan_user) %> |
+<%= link_to 'Back', clan_users_path %>

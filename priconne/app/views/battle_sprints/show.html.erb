@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @battle_sprint.month %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @battle_sprint.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @battle_sprint.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_battle_sprint_path(@battle_sprint) %> |
+<%= link_to 'Back', battle_sprints_path %>

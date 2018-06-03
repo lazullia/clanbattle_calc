@@ -1,0 +1,2 @@
+module ClanUsersHelper
+end

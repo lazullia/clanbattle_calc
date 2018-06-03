@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>クランメンバー</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>役職</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clan_users.each do |clan_user| %>
+      <tr>
+        <td><%= clan_user.name %></td>
+        <td><%= clan_user.position %></td>
+        <td><%= link_to 'ユーザー情報', clan_user %></td>
+        <td><%= link_to 'ユーザー編集', edit_clan_user_path(clan_user) %></td>
+        <td><%= link_to 'ユーザー削除', clan_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'ユーザー新規作成', new_clan_user_path %>

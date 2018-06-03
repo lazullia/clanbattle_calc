@@ -1,0 +1,32 @@
+<%= form_with(model: battle_sprint, local: true) do |form| %>
+  <% if battle_sprint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(battle_sprint.errors.count, "error") %> prohibited this battle_sprint from being saved:</h2>
+
+      <ul>
+      <% battle_sprint.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :month %>
+    <%= form.date_select :month %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

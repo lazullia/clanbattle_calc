@@ -1,0 +1,45 @@
+<%= form_with(model: battle, local: true) do |form| %>
+
+<% if battle.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(battle.errors.count, "error") %> prohibited this battle from being saved:</h2>
+
+    <ul>
+    <% battle.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <%= form_for @battle do |f| %>
+    <div class="field">
+      <%= f.label :battle_sprints_id %>
+      <%= f.collection_select :battle_sprints_id, @battle_sprints, :id, :month, :include_blank => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :clan_users_id %>
+      <%= f.collection_select :clan_users_id, @clan_users, :id, :name, :include_blank => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :characters_id %>
+      <%= f.number_field :characters_id %>
+    </div>
+
+    <div class="field">
+      <%= f.label :damage %>
+      <%= f.number_field :damage %>
+    </div>
+
+    <div class="field">
+      <%= f.label :number %>
+      <%= f.number_field :number %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+<% end %>

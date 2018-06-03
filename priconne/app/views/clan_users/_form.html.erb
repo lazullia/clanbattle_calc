@@ -1,0 +1,27 @@
+<%= form_with(model: clan_user, local: true) do |form| %>
+  <% if clan_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(clan_user.errors.count, "error") %> prohibited this clan_user from being saved:</h2>
+
+      <ul>
+      <% clan_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

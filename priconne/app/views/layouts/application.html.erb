@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Priconne</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav>
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to image_tag("logo.png", alt: "priconne logo"),
+                'https://dmg.priconne-redive.jp/?utm_content=olg&utm_source=dmp&utm_medium=dmp' %></li>
+            <li><%= link_to "Top", root_path %></li>
+            <li><%= link_to "Clan", clan_users_path %></li>
+            <li><%= link_to "Character", characters_path %></li>
+            <li><%= link_to "battle", battles_path %></li>
+            <li><%= link_to "Damage Report", battle_sprints_path %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="wrap">
+      <%= yield %>
+    </div>
+  </body>
+</html>
