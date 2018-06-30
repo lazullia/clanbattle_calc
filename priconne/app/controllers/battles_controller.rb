@@ -5,7 +5,9 @@ class BattlesController < ApplicationController
   # GET /battles
   # GET /battles.json
   def index
-    @battles = Battle.all
+    @q = Battle.ransack(params[:q])
+    @battles = @q.result(distinct: true)
+    @battles = @battles.page(params[:page])
   end
 
   # GET /battles/1
@@ -26,7 +28,6 @@ class BattlesController < ApplicationController
   # POST /battles.json
   def create
     @battle = Battle.new(battle_params)
-    p @battle
 
     respond_to do |format|
       if @battle.save
@@ -78,6 +79,8 @@ class BattlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def battle_params
-      params.require(:battle).permit(:battle_sprints_id, :clan_users_id, :characters_id, :damage, :number)
+      params.require(:battle).permit(:battle_sprints_id, :clan_users_id,
+      :characters_first_id, :characters_second_id, :characters_third_id,
+      :characters_fourth_id, :characters_fifth_id, :damage, :number)
     end
 end

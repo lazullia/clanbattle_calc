@@ -13,7 +13,8 @@
 ActiveRecord::Schema.define(version: 2018_05_27_074100) do
 
   create_table "battle_sprints", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.date "month"
+    t.string "name"
+    t.integer "month"
     t.date "start_date"
     t.date "end_date"
     t.datetime "created_at", null: false
@@ -23,7 +24,11 @@ ActiveRecord::Schema.define(version: 2018_05_27_074100) do
   create_table "battles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "battle_sprints_id"
     t.integer "clan_users_id"
-    t.integer "characters_id"
+    t.integer "characters_first_id"
+    t.integer "characters_second_id"
+    t.integer "characters_third_id"
+    t.integer "characters_fourth_id"
+    t.integer "characters_fifth_id"
     t.integer "damage"
     t.integer "number"
     t.datetime "created_at", null: false

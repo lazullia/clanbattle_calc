@@ -1,0 +1,25 @@
+ja:
+  battles: # app/views/battlesを表す
+    index:
+      title: "戦闘一覧"
+    show:
+      title: "戦闘詳細"
+    edit:
+      title: "戦闘編集"
+    new:
+      title: "戦闘作成"
+
+  activerecord: &activerecord
+    models:
+      battles: "戦闘"
+      search_form: "検索フォーム"
+    attributes:
+      battle:
+        character: "PTメンバー"
+        battle_sprint: "クランバトル"
+        clan_user: "クランメンバー"
+        damage: "ダメージ"
+        number: "当日戦闘回数"
+        one: "1回目"
+        two: "2回目"
+        three: "3回目"

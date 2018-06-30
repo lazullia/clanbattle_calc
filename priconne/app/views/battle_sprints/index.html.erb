@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Month</th>
       <th>Start date</th>
       <th>End date</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @battle_sprints.each do |battle_sprint| %>
       <tr>
+        <td><%= battle_sprint.name %></td>
         <td><%= battle_sprint.month %></td>
         <td><%= battle_sprint.start_date %></td>
         <td><%= battle_sprint.end_date %></td>

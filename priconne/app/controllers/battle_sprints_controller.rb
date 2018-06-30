@@ -69,6 +69,6 @@ class BattleSprintsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def battle_sprint_params
-      params.require(:battle_sprint).permit(:month, :start_date, :end_date, :battle_sprint_id)
+      params.require(:battle_sprint).permit(:name, :month, :start_date, :end_date, :battle_sprint_id)
     end
 end

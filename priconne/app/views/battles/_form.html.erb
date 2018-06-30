@@ -14,32 +14,61 @@
 
   <%= form_for @battle do |f| %>
     <div class="field">
-      <%= f.label :battle_sprints_id %>
-      <%= f.collection_select :battle_sprints_id, @battle_sprints, :id, :month, :include_blank => true %>
+      <%= f.label t 'activerecord.attributes.battle.battle_sprint' %>
+      <%= f.collection_select :battle_sprints_id, @battle_sprints, :id, :name, :include_blank => true %>
     </div>
 
     <div class="field">
-      <%= f.label :clan_users_id %>
+      <%= f.label t 'activerecord.attributes.battle.clan_user' %>
       <%= f.collection_select :clan_users_id, @clan_users, :id, :name, :include_blank => true %>
     </div>
 
-    <div class="field">
-      <%= f.label :characters_id %>
-      <%= f.number_field :characters_id %>
+    <div class="form-group">
+      <%= f.label t 'activerecord.attributes.battle.character', :count => 1 %>
+      <div class="field">
+        <%= f.collection_select :characters_first_id, @characters, :id, :name, :include_blank => true %>
+      </div>
+
+      <div class="field">
+        <%= f.collection_select :characters_second_id, @characters, :id, :name, :include_blank => true %>
+      </div>
+
+      <div class="field">
+        <%= f.collection_select :characters_third_id, @characters, :id, :name, :include_blank => true %>
+      </div>
+
+      <div class="field">
+        <%= f.collection_select :characters_fourth_id, @characters, :id, :name, :include_blank => true %>
+      </div>
+
+      <div class="field">
+        <%= f.collection_select :characters_fifth_id, @characters, :id, :name, :include_blank => true %>
+      </div>
     </div>
 
     <div class="field">
-      <%= f.label :damage %>
+      <%= f.label t 'activerecord.attributes.battle.damage' %>
       <%= f.number_field :damage %>
     </div>
 
     <div class="field">
-      <%= f.label :number %>
-      <%= f.number_field :number %>
+      <%= f.label t 'activerecord.attributes.battle.number' %>
+      <div class="radio-inline">
+        <%= f.radio_button :number, :one, checked: "checked" %>
+        <%= f.label t 'activerecord.attributes.battle.one' %>
+      </div>
+      <div class="radio-inline">
+        <%= f.radio_button :number, :two %>
+        <%= f.label t 'activerecord.attributes.battle.two' %>
+      </div>
+      <div class="radio-inline">
+        <%= f.radio_button :number, :three %>
+        <%= f.label t 'activerecord.attributes.battle.three' %>
+      </div>
     </div>
 
-    <div class="actions">
-      <%= f.submit %>
+    <div class="actions float-left">
+      <%= f.submit :class => 'btn btn-primary' %>
     </div>
   <% end %>
 <% end %>

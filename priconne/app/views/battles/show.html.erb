@@ -1,13 +1,36 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= t '.title' %></h1>
+
 <p>
   <strong>Battle sprint:</strong>
-  <%= @battle.battle_sprints_id %>
+  <%= @battle.battle_sprint.name %>
 </p>
 
 <p>
   <strong>Clan user:</strong>
-  <%= @battle.clan_users_id %>
+  <%= @battle.clan_user.name %>
+</p>
+
+<p>
+  <strong>character:</strong>
+  <%= image_tag(@battle.first_character_image) %>
+</p>
+<p>
+  <strong>character:</strong>
+  <%= image_tag(@battle.second_character_image) %>
+</p>
+<p>
+  <strong>character:</strong>
+  <%= image_tag(@battle.third_character_image) %>
+</p>
+<p>
+  <strong>character:</strong>
+  <%= image_tag(@battle.fourth_character_image) %>
+</p>
+<p>
+  <strong>character:</strong>
+  <%= image_tag(@battle.fifth_character_image) %>
 </p>
 
 <p>
@@ -16,7 +39,7 @@
 </p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>回数</strong>
   <%= @battle.number %>
 </p>
 
